@@ -17,17 +17,17 @@ shinyUI(fluidPage(
     
     #aqui van los sliders
     sidebarPanel(
-      sliderInput("nsim",
-                  "Selecciona tamano de la muestra:",
-                  min = 1000,
-                  max = 10000,
-                  value = 100),
+      #sliderInput("nsim",
+      #            "Selecciona de la muestra:",
+      #            min = 1000,
+      #            max = 10000,
+      #            value = 100),
       
       sliderInput("Nm",
-                  "Selecciona numero de muestras:",
-                  min = 50,
-                  max = 1000,
-                  value = 50),
+                  "Selecciona tamaño de muestras:",
+                  min = 150,
+                  max = 700,
+                  value = 200),
       
       sliderInput("lam2",
                   "Selecciona Lambda Funcion Objetivo:",
@@ -39,19 +39,19 @@ shinyUI(fluidPage(
                   "Selecciona Lambda de g(x):",
                   min = .1,
                   max = 5,
-                  value = 1.5),
+                  value = 1.5)
       
-      sliderInput("alfa",
-                  "Selecciona Alfa: mejor opcion 1",
-                  min = .1,
-                  max = 3,
-                  value = 1),
+      #sliderInput("alfa",
+      #            "Alfa Fija: mejor opcion 2",
+      #            min = 0,
+      #            max = 3,
+      #            value = 2),
       
-      sliderInput("beta",
-                  "Selecciona Beta: mejor opcion 0.8",
-                  min = .1,
-                  max = 3,
-                  value = .8)
+      #sliderInput("beta",width = '100px',
+      #            "Beta Fija: mejor opcion 1.5",
+      #            min = 0,
+      #            max = 3,
+      #            value = 1.5)
       
     ), #aqui terminan los sliders
 
@@ -61,7 +61,8 @@ shinyUI(fluidPage(
       plotOutput("distPlot2"),
       plotOutput("distPlot3"),      
       plotOutput("distPlot4"), 
-      tableOutput("view")
+      tableOutput("view"),
+      tags$head(tags$style("#view table {background-color: lightgray; }", media="screen", type="text/css"))
     )
   )
 ))
